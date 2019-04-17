@@ -11,6 +11,7 @@
                   projectile-completion-system 'ivy
                   ivy-magic-tilde nil
                   ivy-dynamic-exhibit-delay-ms 150
+                  ivy-use-selectable-prompt t
                   ivy-initial-inputs-alist
                   '((Man-completion-table . "^")
                     (woman . "^")))
@@ -33,9 +34,6 @@
     (require-package 'flx)
     (setq-default ivy-re-builders-alist
                   '((t . ivy--regex-fuzzy)))))
-
-(when (maybe-require-package 'ivy-historian)
-  (add-hook 'after-init-hook 'ivy-historian-mode))
 
 (when (maybe-require-package 'counsel)
   (setq-default counsel-mode-override-describe-bindings t)
